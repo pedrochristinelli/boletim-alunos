@@ -1,0 +1,7 @@
+<div class="topnav">
+    <a class="{{classCadastro}}" (click)="exibirCadastro()">Cadastrar Aluno</a>
+    <a class="{{classListar}}" (click)="exibirLista()">Listar Alunos</a>
+</div>
+
+<app-cadastro-aluno [show]="cadastroAtivo"></app-cadastro-aluno>
+<app-lista-aluno [show]="listaAtiva" (notify)="isSubmit()"></app-lista-aluno>

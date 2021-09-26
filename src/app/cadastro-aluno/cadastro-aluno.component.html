@@ -1,0 +1,27 @@
+<form class="form-style-7" *ngIf="show">
+    <h1>Cadastrar Aluno</h1>
+    <ul>
+        <li>
+            <label for="nome">Name</label>
+            <input [(ngModel)]="cadastroAluno.nome" type="text" name="nome" placeholder="Nome">
+            <span>Esse campo é mandatório.</span>
+            <span style="background:red; margin-top: 10px;" *ngIf="nomeError">Não deve estar vazio.</span>
+        </li>
+
+        <li>
+            <label for="idade">Idade</label>
+            <input [(ngModel)]="cadastroAluno.idade" type="number" name="idade">
+            <span>Esse campo é mandatório.</span>
+            <span style="background:red; margin-top: 10px;" *ngIf="idadeError">Deve ser maior que 18 anos.</span>
+        </li>
+
+        <li>
+            <label for="foto">Foto</label>
+            <input [(ngModel)]="cadastroAluno.fotoUrl" type="url" name="foto">
+        </li>
+
+        <li>
+            <input type="submit" value="Cadastrar" (click)="salvaAluno()">
+        </li>
+    </ul>
+</form>

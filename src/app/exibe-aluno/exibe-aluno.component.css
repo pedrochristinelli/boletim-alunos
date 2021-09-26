@@ -1,0 +1,7 @@
+div{
+    align-items: right;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #5C5C5C;
+    margin: 10px;
+    align-self: flex-start;
+}

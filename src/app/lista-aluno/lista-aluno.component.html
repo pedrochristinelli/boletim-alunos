@@ -1,0 +1,11 @@
+<div *ngIf="show">
+    <hr>
+    <h1> Alunos Cadastrados</h1>
+    <ul>
+        <li *ngFor="let aluno of listaAlunos">
+            <a style="margin: 6px; justify-self: left;"></a>
+            {{aluno.nome}}
+            <app-exibe-aluno [aluno]="aluno" style="justify-content: right;text-align: -webkit-right;"></app-exibe-aluno>
+        </li>
+    </ul>
+</div>

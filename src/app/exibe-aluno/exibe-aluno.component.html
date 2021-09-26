@@ -1,0 +1,7 @@
+<button style="width: 90px; height: 40px;margin-left: 11px;align-self: -webkit-left;" (click)="viewAluno()">Visualizar Aluno</button>
+<div *ngIf="show">
+    <h1> {{aluno.nome}}</h1>
+    <h2> {{aluno.idade}} anos.</h2>
+    <img *ngIf="isAlunoFotoNullOrEmpty() == false" src="https://thispersondoesnotexist.com/image" style="height: 300px; width: auto;">
+    <img *ngIf="isAlunoFotoNullOrEmpty()" src="{{aluno.fotoUrl}}" style="height: 300px; width: auto;">
+</div>
