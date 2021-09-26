@@ -11,7 +11,7 @@ export class CadastroAlunoComponent implements OnInit {
 
   @Input() cadastroAluno : Aluno = {nome:"", idade:0, fotoUrl:""};
   @Input() show : Boolean;
-  @Output() notify = new EventEmitter();
+  @Output() notify: EventEmitter<any> = new EventEmitter<any>();
 
   listaAlunos : Aluno[] = listaAlunosCadastrados;
   nomeError: Boolean = false
@@ -39,7 +39,6 @@ export class CadastroAlunoComponent implements OnInit {
       this.cadastroAluno = {nome:"", idade:0, fotoUrl:""};
       this.notify.emit();
       this.listaAlunos.push(novoAluno);
-
     }
   }
 }

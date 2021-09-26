@@ -28,12 +28,14 @@ export class MenuComponent implements OnInit {
   exibirLista(): void{
     this.listaAtiva = true;
     this.cadastroAtivo = false;
-    this.classCadastro = ""
+    this.classCadastro = "";
     this.classListar = "active";
   }
 
-  isSubmit(): void{
-    this.exibirLista()
+  isSubmit(event:any): void{
+    console.log("aS");
+    console.log(event);
+    this.exibirLista();
   }
 
 }

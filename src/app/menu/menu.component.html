@@ -4,4 +4,4 @@
 </div>
 
 <app-cadastro-aluno [show]="cadastroAtivo"></app-cadastro-aluno>
-<app-lista-aluno [show]="listaAtiva" (notify)="isSubmit()"></app-lista-aluno>
+<app-lista-aluno [show]="listaAtiva" (notify)="isSubmit($event)"></app-lista-aluno>
