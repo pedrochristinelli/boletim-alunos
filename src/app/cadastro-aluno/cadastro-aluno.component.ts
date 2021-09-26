@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Aluno } from '../aluno.model';
 import { listaAlunosCadastrados } from '../listaAlunos';
 
@@ -11,7 +11,7 @@ export class CadastroAlunoComponent implements OnInit {
 
   @Input() cadastroAluno : Aluno = {nome:"", idade:0, fotoUrl:""};
   @Input() show : Boolean;
-  @Output() notify: EventEmitter<any> = new EventEmitter<any>();
+  @Output() notify = new EventEmitter<string>();
 
   listaAlunos : Aluno[] = listaAlunosCadastrados;
   nomeError: Boolean = false
@@ -19,14 +19,13 @@ export class CadastroAlunoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
   salvaAluno(): void{
     if(typeof this.cadastroAluno.nome === "undefined" || this.cadastroAluno.nome == null || (!this.cadastroAluno.nome || /^\s*$/.test(this.cadastroAluno.nome))){
       this.nomeError = true;
       if(typeof this.cadastroAluno.nome === "undefined" || this.cadastroAluno.idade < 18){
         this.idadeError = true;
+      } else {
+        this.idadeError = false;
       }
     } else if(typeof this.cadastroAluno.nome === "undefined" || this.cadastroAluno.idade < 18){
       this.nomeError = false;
@@ -37,9 +36,12 @@ export class CadastroAlunoComponent implements OnInit {
 
       let novoAluno = {nome: this.cadastroAluno.nome, idade:this.cadastroAluno.idade, fotoUrl:this.cadastroAluno.fotoUrl}
       this.cadastroAluno = {nome:"", idade:0, fotoUrl:""};
-      this.notify.emit();
+      this.notify.emit("Mudar de Pagina");
       this.listaAlunos.push(novoAluno);
     }
+  }
+
+  ngOnInit(): void {
   }
 }
  
