@@ -8,6 +8,7 @@ import { CadastroAlunoComponent } from './cadastro-aluno/cadastro-aluno.componen
 import { ListaAlunoComponent } from './lista-aluno/lista-aluno.component';
 import { ExibeAlunoComponent } from './exibe-aluno/exibe-aluno.component';
 import { MenuComponent } from './menu/menu.component';
+import { ToastMessagesComponent } from './toast-messages/toast-messages.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MenuComponent } from './menu/menu.component';
     CadastroAlunoComponent,
     ListaAlunoComponent,
     ExibeAlunoComponent,
-    MenuComponent
+    MenuComponent,
+    ToastMessagesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,11 @@
-<div class="topnav">
-    <a class="{{classCadastro}}" (click)="exibirCadastro()">Cadastrar Aluno</a>
-    <a class="{{classListar}}" (click)="exibirLista()">Listar Alunos</a>
+<h1 class="title is-1 has-text-centered mb-3">Boletim de Alunos</h1>
+<div class="tabs is-centered">
+    <ul>
+        <li>
+            <a routerLink="/cadastro">Cadastrar Aluno</a>
+        </li>
+        <li>
+            <a routerLink="/listar">Listar Alunos</a>
+        </li>
+    </ul>
 </div>
-
-<app-cadastro-aluno [show]="cadastroAtivo"></app-cadastro-aluno>
-<app-lista-aluno [show]="listaAtiva" (notify)="isSubmit($event)"></app-lista-aluno>

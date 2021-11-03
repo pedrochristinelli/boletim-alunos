@@ -1,11 +1,29 @@
-<div *ngIf="show">
-    <hr>
-    <h1> Alunos Cadastrados</h1>
-    <ul>
-        <li *ngFor="let aluno of listaAlunos">
-            <a style="margin: 6px; justify-self: left;"></a>
-            {{aluno.nome}}
-            <app-exibe-aluno [aluno]="aluno" style="justify-content: right;text-align: -webkit-right;"></app-exibe-aluno>
-        </li>
-    </ul>
+<div class="is-centered">
+    <h1 class="title has-text-centered mb-3"> Alunos Cadastrados</h1>
+    <div class="columns is-centered">
+        <table class="table is-bordered is-centered">
+            <thead>
+                <tr>
+                    <th class="has-text-centered">
+                        Nome do aluno
+                    </th>
+                    <th class="has-text-centered">
+                        Opções
+                    </th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let aluno of listaAlunos">
+                <tr>
+                    <td class="has-text-centered">
+                        {{aluno.nome}}
+                    </td>
+                    <td class="has-text-centered">
+                        <button class="button is-primary" [routerLink]="['aluno', aluno.id, 'view']">Visualizar Aluno</button>
+                        <button class="button is-warning" [routerLink]="['aluno', aluno.id, 'edit']">Editar Aluno</button>
+                        <button class="button is-danger" (click)="removeAluno(aluno.id)">Remover Aluno</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

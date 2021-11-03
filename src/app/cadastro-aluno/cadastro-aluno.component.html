@@ -1,27 +1,29 @@
-<form class="form-style-7" *ngIf="show">
-    <h1>Cadastrar Aluno</h1>
-    <ul>
-        <li>
-            <label for="nome">Name</label>
-            <input [(ngModel)]="cadastroAluno.nome" type="text" name="nome" placeholder="Nome">
-            <span>Esse campo é mandatório.</span>
-            <span style="background:red; margin-top: 10px;" *ngIf="nomeError">Não deve estar vazio.</span>
-        </li>
-
-        <li>
-            <label for="idade">Idade</label>
-            <input [(ngModel)]="cadastroAluno.idade" type="number" name="idade">
-            <span>Esse campo é mandatório.</span>
-            <span style="background:red; margin-top: 10px;" *ngIf="idadeError">Deve ser maior que 18 anos.</span>
-        </li>
-
-        <li>
-            <label for="foto">Foto</label>
-            <input [(ngModel)]="cadastroAluno.fotoUrl" type="url" name="foto">
-        </li>
-
-        <li>
-            <input type="submit" value="Cadastrar" (click)="salvaAluno()">
-        </li>
-    </ul>
-</form>
+<div class="columns is-centered">
+    <form class="column is-half ">
+        <h1 class="title has-text-centered mb-3">Cadastrar Aluno</h1>
+        <ul class="has-text-centered">
+            <li class="field">
+                <label for="nome" class="label">Nome</label>
+                <input [(ngModel)]="cadastroAluno.nome" type="text" name="nome" class="input" placeholder="Nome">
+                <span class="help">Esse campo é mandatório.</span>
+                <span *ngIf="nomeError" class="help">Não deve estar vazio.</span>
+            </li>
+    
+            <li class="field">
+                <label for="idade" class="label">Idade</label>
+                <input [(ngModel)]="cadastroAluno.idade" type="number" class="input" name="idade">
+                <span class="help">Esse campo é mandatório.</span>
+                <span *ngIf="idadeError" class="help">Deve ser maior que 18 anos.</span>
+            </li>
+    
+            <li class="field">
+                <label for="foto" class="label">Foto</label>
+                <input [(ngModel)]="cadastroAluno.fotoUrl" type="url" class="input" name="foto">
+            </li>
+    
+            <li class="field">
+                <button class="button is-link" (click)="salvaAluno()">Cadastrar</button>
+            </li>
+        </ul>
+    </form>     
+</div>

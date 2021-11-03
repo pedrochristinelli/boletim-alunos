@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Aluno } from '../aluno.model';
 import { listaAlunosCadastrados } from '../listaAlunos';
 
+import { AlunosService } from '../alunos.service';
+
 @Component({
   selector: 'app-lista-aluno',
   templateUrl: './lista-aluno.component.html',
@@ -10,18 +12,20 @@ import { listaAlunosCadastrados } from '../listaAlunos';
 export class ListaAlunoComponent implements OnInit {
 
   listaAlunos: Aluno[];
-  @Input() show : Boolean;
 
-  constructor() {  }
+  constructor(private service : AlunosService ) { }
 
   ngOnInit(): void {
-    this.listaAlunos = listaAlunosCadastrados;
-    console.log(this.listaAlunos);
+    this.listaAlunos = this.service.getAlunos();
+  }
+
+  removeAluno(aluno: any){
+    this.service.removeAlunoById(aluno);
+    this.listaAlunos = this.service.getAlunos();
   }
 
   alunoSelecionado: Aluno;
   exibir(aluno: Aluno): void{
     this.alunoSelecionado = aluno;
-    console.log(aluno.nome)
   }
 }
