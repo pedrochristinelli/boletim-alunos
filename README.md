@@ -1,6 +1,7 @@
 # BoletimAlunos
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
+This project was made in the Programming Topic 2 Class. It implements a simple school management system. 
 
 ## Development server
 
